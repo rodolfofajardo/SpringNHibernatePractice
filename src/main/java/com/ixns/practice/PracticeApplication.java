@@ -9,6 +9,7 @@ public class PracticeApplication {
 				new ClassPathXmlApplicationContext("ApplicationContext.xml");
 		Coach theCoach = context.getBean("coach", Coach.class);
 		System.out.println(theCoach.getDailyWork());
+		System.out.println(theCoach.getFortune());
 		context.close();
 	}
 
