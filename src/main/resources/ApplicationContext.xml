@@ -13,7 +13,20 @@
 		<constructor-arg value="${fortune.array}"></constructor-arg>
 	</bean>
 	
-	<bean id="coach" class="com.ixns.practice.SoccerCoach">
+	<bean id="coach" 
+			class="com.ixns.practice.SoccerCoach"
+			init-method="startup"
+			destroy-method="cleanup">
 		<constructor-arg ref="fortune"></constructor-arg>
 	</bean>
+	
+	<bean id="protoCoach" 
+			class="com.ixns.practice.SoccerCoach" 
+			scope="prototype"
+			init-method="startup"
+			destroy-method="destroy">
+		<constructor-arg ref="fortune"></constructor-arg>
+	</bean>
+	
+	<bean id="customProcessor" class="com.ixns.practice.CustomBeanProcessor"></bean>
 </beans>
