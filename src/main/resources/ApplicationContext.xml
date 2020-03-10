@@ -6,14 +6,7 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd">
-	
-	<context:property-placeholder location="classpath:application.properties"/>
-	
-	<bean id="fortune" class="com.ixns.practice.RandomFortune">
-		<constructor-arg value="${fortune.array}"></constructor-arg>
-	</bean>
-	
-	<bean id="coach" class="com.ixns.practice.SoccerCoach">
-		<constructor-arg ref="fortune"></constructor-arg>
-	</bean>
+
+	<context:component-scan base-package="com.ixns.practice"></context:component-scan>	
+
 </beans>
